@@ -1,0 +1,47 @@
+1. class Attraction has:
+
+      :name => "Roller Coaster",
+      :tickets => 5,
+      :nausea_rating => 2,
+      :happiness_rating => 4,
+      :min_height => 32
+"is valid with a name, min_height, nausea_rating, happiness_rating, and ticket number" do
+"has many rides"
+"has many users through rides"
+    
+2. class Ride
+belongs_to attraction and user'
+user_id, attraction_id
+#take_ride 
+	1. check if user has enough tickets 0  arguments
+	2. that accounts for the user not being tall enough
+
+	3.that updates ticket number
+	4.that updates the user's nausea
+	5. updates the user's happiness
+
+3. class User
+	1. is valid with a name, happiness, nausea, height, and ticket
+	2.has an admin boolean
+	3.defaults to admin => false
+	4.has many rides
+	5. has many attractions through rides
+	6. has a method 'mood' that returns 'sad' when the user is more nauseous than happy
+	7. has a method 'mood' that returns 'happy' when the user is more happy than nauseous
+
+
+
+links from the user show page to the attractions index page' do
+click_link('See attractions')
+expect(current_path).to eq('/attractions')
+
+
+prevents users from editing/deleting/adding rides on the index page'
+set roles for user!!
+
+Things to consider: 
+1. For sign in no need to have password, just a drop-down manual from which u can choose the username that is yours
+
+2. seems no need for devise and pundit gems. Need to create a session controller though i guess
+
+3. 

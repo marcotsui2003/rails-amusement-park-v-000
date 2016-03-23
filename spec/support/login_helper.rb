@@ -19,7 +19,9 @@ module LoginHelper
   end
 
   def user_login
+
     @mindy = User.create(:name=>"Mindy", :happiness=>3, :nausea=>2, :tickets=>10, :height=>50)
+     
     visit '/'
     click_link('Sign in')
     expect(current_path).to eq('/signin')
